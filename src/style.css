@@ -336,29 +336,6 @@ strong {
   /* Safari and Chrome */
 }
 
-.mountain1 {}
-
-.mountain2 {}
-
-.mountain3 {}
-
-.mountain4 {}
-
-.birds {}
-
-.sun {}
-
-.clouds1 {}
-
-.clouds2 {}
-
-.trees1 {}
-
-.trees2 {
-  /* background-image: url(./Assets/Parallax/trees2.png); */
-  /* top: 5% */
-}
-
 #ParallaxBackground {
   background: linear-gradient(to bottom, #FFD60A 45%, #4F000B 45%);
   height: 100%;
@@ -403,19 +380,19 @@ strong {
   }
 
   .mountain1 {
-    top: -20px
+    top: -20px;
   }
 
   .mountain2 {
-    top: -20px
+    top: -20px;
   }
 
   .mountain3 {
-    top: -10px
+    top: -10px;
   }
 
   .mountain4 {
-    top: -70px
+    top: -70px;
   }
 
   .trees1,
@@ -968,8 +945,6 @@ strong {
   color: white !important;
 }
 
-.abput-section div {}
-
 .about-section-header {
   font-size: 2.1em;
   padding-bottom: 20px;
@@ -1469,6 +1444,6 @@ span.vertical-timeline-element-icon.bounce-in::before {
   }
 
   span.vertical-timeline-element-icon.bounce-in::before {
-    top: -25px
+    top: -25px;
   }
 }
