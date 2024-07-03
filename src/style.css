@@ -2,12 +2,12 @@ html {
   /* --section-background-color: linear-gradient(to bottom left,
       rgba(17, 16, 16, 0.582),
       rgba(12, 8, 24, 0.904)); */
-  --section-background-color: #4F000B
-    /* --section-background-color: linear-gradient(to bottom left,
+  --section-background-color: #4F000B;
+  /* --section-background-color: linear-gradient(to bottom left,
       #4F000B,
       #7E230A); */
 
-    --image-gradient: linear-gradient(to bottom left,
+  --image-gradient: linear-gradient(to bottom left,
       rgba(17, 16, 16, 0.678),
       rgba(12, 10, 22, 0.863));
 
@@ -516,7 +516,7 @@ strong {
 }
 
 .home-img-svg {
-  max-height: 450px
+  max-height: 450px;
 }
 
 .homeMainImg {
@@ -549,12 +549,12 @@ strong {
       -0.25px 0.25px 0 #FFC300,
       0.25px 0.25px 0 #FFC300;
     -webkit-text-stroke: 0.25px #4F000B; */
-    color: #4F000B
+    color: #4F000B;
   }
 
   .heading,
   .heading-name-first {
-    color: #AC4609 !important
+    color: #AC4609 !important;
   }
 
   .home-content {
@@ -593,7 +593,7 @@ strong {
   }
 
   .home-img-svg {
-    height: 280px
+    height: 280px;
   }
 
   .home-introduction {
@@ -909,7 +909,7 @@ strong {
 }
 
 .project-heading>p {
-  font-size: 1.2em !important
+  font-size: 1.2em !important;
 }
 
 .card-body {
