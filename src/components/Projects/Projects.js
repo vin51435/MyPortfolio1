@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import leaf from "@src/Assets/Projects/leaf.png";
-import emotion from "@src/Assets/Projects/emotion.png";
-import editor from "@src/Assets/Projects/codeEditor.png";
-import chatify from "@src/Assets/Projects/chatify.png";
-import suicide from "@src/Assets/Projects/suicide.png";
-import bitsOfCode from "@src/Assets/Projects/blog.png";
 
 function Projects({ toggleLoading }) {
   useEffect(() => {
@@ -25,68 +19,47 @@ function Projects({ toggleLoading }) {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={'https://res.cloudinary.com/dwutvtryh/image/upload/v1720076856/portfolio%201/ProjectImg/moview.png'}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-            // ghLink="https://github.com/"
-            // demoLink="https:///"
+              title="Moview"
+              description="Moview is your ultimate destination for discovering the latest in movies and TV shows. The platform provides details about new releases, including ratings, cast information, and trailers. With sections highlighting popular, trending, and top-rated content, users can easily find what’s hot in the entertainment world."
+              ghLink="https://github.com/vin51435/Moview"
+              demoLink="https://moview-two.vercel.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={'https://res.cloudinary.com/dwutvtryh/image/upload/v1720076855/portfolio%201/ProjectImg/foodAlls.png'}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-            // ghLink="https://github.com/"
-            // demoLink="https://"
+              title="Food Alls"
+              description="
+Food Alls is your go-to platform for discovering and sharing local food stalls. Explore a variety of stalls, read reviews, and contribute by adding your favorites. Whether you're a food enthusiast or a stall owner, Food Alls connects you with the best street food options available. Start your culinary adventure today!"
+              ghLink="https://github.com/vin51435/FoodAlls"
+              demoLink="https://food-alls.vercel.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={'https://res.cloudinary.com/dwutvtryh/image/upload/v1720076855/portfolio%201/ProjectImg/dashboard.png'}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-            // ghLink="https://github.com/Editor.io"
-            // demoLink="https://editor-.tech/"
+              title="Front-end Showcase"
+              description="This front-end dashboard showcases my skills in creating dynamic user interfaces with modern web technologies. It includes sections for product management, customer tracking, income analytics, and promotional tools, providing key metrics like earnings, orders, balance, and total sales."
+              ghLink="https://github.com/vin51435/Dashboard-FrontPage-UsingReact"
+              demoLink="https://dashboard-front-page-using-react.vercel.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={'https://res.cloudinary.com/dwutvtryh/image/upload/v1720076855/portfolio%201/ProjectImg/cmpro.png'}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-            // ghLink="https://github.com/Plant_AI"
-            // demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-            // ghLink="https://github.com/AI_For_Social_Good"
-            // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-            // ghLink="https://github.com/Face_And_Emotion_Detection"
-            // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="College Management System (incomplete)"
+              description="
+The College Management System streamlines academic and administrative processes with separate logins for teachers and students, ensuring secure access. It manages attendance, class schedules, and personal profiles, while aiding academic progress tracking through performance analysis."
+              ghLink="https://github.com/vin51435/CollegeManagement"
+              demoLink="https://college-management-psi.vercel.app/"
             />
           </Col>
         </Row>

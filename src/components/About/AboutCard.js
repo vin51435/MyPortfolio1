@@ -7,7 +7,7 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p className='about-para' style={{ textAlign: "justify" }}>
+          <p className='about-para' style={{ textAlign: "start" }}>
             <span>
               Hi Everyone, I am <span className="yellow">Vinay Poojary</span> from
               <span className="yellow"> Mumbai, India.</span>
@@ -26,15 +26,15 @@ function AboutCard() {
               Apart from coding, some other activities that I love to do!
             </span>
           </p>
-          <ul>
+          <ul className="ml-1" style={{ listStylePosition: 'outside' }}>
             <li className="about-activity">
-              <FaRegHandPointRight /> Playing Games
+              Playing Games
             </li>
             <li className="about-activity">
-              <FaRegHandPointRight /> Sketching
+              Sketching
             </li>
             <li className="about-activity">
-              <FaRegHandPointRight /> Traveling
+              Traveling
             </li>
           </ul>
 

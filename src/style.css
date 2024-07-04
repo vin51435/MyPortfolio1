@@ -837,7 +837,11 @@ strong {
 }
 
 .project-card-view .btn-primary {
-  background-color: #6e5494 !important;
+  background-color: #FFD60A !important;
+  color: #4f000b !important;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .blog-card {
@@ -885,14 +889,14 @@ strong {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background-color: #FFD60A !important;
+  border-color: #FFD60A !important;
 }
 
 .btn-primary:hover {
-  color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  color: #4f000b !important;
+  background-color: #FFC300 !important;
+  border-color: #FFC300 !important;
 }
 
 .btn:focus {
@@ -1086,7 +1090,7 @@ strong {
 }
 
 .about-activity {
-  list-style: none !important;
+  /* list-style: none !important; */
   text-align: left !important;
   padding-left: 1px !important;
 }

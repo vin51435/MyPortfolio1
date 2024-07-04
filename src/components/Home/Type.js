@@ -9,7 +9,6 @@ function Type() {
           "MERN Stack Developer",
           "Frontend Enthusiast",
           "API Integrator",
-          "Web Designer",
           "React.js Developer"
         ],
         autoStart: true,
