@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import pdf from "@src/Assets/VINAY POOJARYJune5.pdf";
+import pdf from "@src/Assets/VINAY_POOJARY_RESUME.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
 
 function ResumeNew({ toggleLoading }) {
