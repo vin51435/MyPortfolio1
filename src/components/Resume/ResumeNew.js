@@ -3,32 +3,16 @@ import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
+import useViewportAndFooterHeight from '@src/components/Hooks/useViewportAndFooterHeight';
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import pdf from "@src/Assets/VINAY_POOJARY_RESUME.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
 
 function ResumeNew({ toggleLoading }) {
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
-  const [footerHeight, setFooterHeight] = useState(0);
+  const { viewportHeight, footerHeight } = useViewportAndFooterHeight('.footer');
 
   useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    const element = document.querySelector('.footer'); // Replace with your actual selector
-    if (element) {
-      setFooterHeight(element.clientHeight);
-    }
-
     toggleLoading(false);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   return (

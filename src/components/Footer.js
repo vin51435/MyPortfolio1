@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useLocation } from 'react-router-dom';
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -13,7 +12,6 @@ function Footer() {
   let date = new Date();
   let year = date.getFullYear();
 
-  // console.log(location.pathname);
   return (
     location.pathname !== '/' && (
       <Container fluid className="footer">
@@ -21,8 +19,8 @@ function Footer() {
           <Col md="4" className="footer-copywright justify-content-between">
             <h3>Designed and Developed by Vinay Poojary</h3>
           </Col>
-          {/* <Col md="4" className="footer-copywright">
-            <h3>Copyright © {year} SB</h3>
+          {/* <Col md="4" className="footer-copyright">
+            <h3>Copyright © {year}</h3>
           </Col> */}
           <Col md="4" className="footer-body">
             <ul className="footer-icons">

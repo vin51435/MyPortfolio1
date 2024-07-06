@@ -4,11 +4,9 @@ import myImg from "@src/Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { SiIndeed } from "react-icons/si";
 
 function Home2() {
   return (
@@ -97,16 +95,6 @@ function Home2() {
                   <FaLinkedinIn />
                 </a>
               </li>
-              {/* <li className="social-icons">
-                <a
-                  // href="https://indeed.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-color  home-social-icons"
-                >
-                  <SiIndeed />
-                </a>
-              </li> */}
               <li className="social-icons">
                 <a
                   href="https://www.instagram.com/vinaypoojary__"

@@ -16,24 +16,18 @@ function Home({ load, toggleLoading, isMobile }) {
 
   const totalImgNoMob = 10;
   const mobileCount = images.filter(obj => obj.for === 'Mobile').length;
-  const totalImages = images.length; // Adjust if you have a different number of images
+  const totalImages = images.length;
 
   useEffect(() => {
-    // console.log('useEffect ran');
-    // console.log(imagesLoaded, totalImages);
     if (isMobile) {
-      // console.log('mobile bg loaded');
       toggleLoading(false);
     } else if (imagesLoaded >= (totalImages - mobileCount)) {
-      // console.log('all loaded');
       toggleLoading(false);
     }
   }, [load, imagesLoaded]);
 
   const handleImageLoad = () => {
-    // console.log('handleImageLoad ran');
     setImagesLoaded(prev => prev + 1);
-    // console.log(imagesLoaded, totalImages);
   };
 
   const getImageUrlByIdAndWidth = (id, width) => {
@@ -46,13 +40,10 @@ function Home({ load, toggleLoading, isMobile }) {
   };
 
   const getImage = (id, onLoad, widths) => {
-    // console.log('getImage ran', id);
-    // console.log('widths', widths);
     const image = images.find(img => img.id === id);
     if (!image) return null;
 
     if (!widths) {
-      // console.log('undefined ran');
       return (
         <img
           src={image?.url}
@@ -76,7 +67,6 @@ function Home({ load, toggleLoading, isMobile }) {
         />
       );
     });
-    // console.log(sourceList);
     return (
       <picture>
         {sourceList}
@@ -94,7 +84,6 @@ function Home({ load, toggleLoading, isMobile }) {
     <>
       <div className='home-main-container' style={{
         overflow: 'hidden',
-        // height: `${viewportHeight}px`
       }}>
         {!isMobile ? (
           <>

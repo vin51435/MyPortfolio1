@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from 'react-router-dom';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 // import logo from "@src/Assets/logo.png";
-// import { ImBlog } from "react-icons/im";
+
 import {
   AiFillStar,
   AiOutlineHome,
@@ -23,8 +22,36 @@ function NavBar({ toggleLoading, load }) {
   const [navColor, updateNavbar] = useState(false);
   const [windowLoaded, setWindowLoaded] = useState(false);
   const location = useLocation();
+  const oldScroll = useRef(0);
 
   const activePage = location.pathname;
+
+  useEffect(() => {
+    // Function to handle URL change
+    const handleUrlChange = () => {
+      updateExpanded(false); // Set expand to false on URL change
+    };
+
+    // Function to handle scrolling of .app element
+    const handleScroll = () => {
+      console.log('handle scroll triggered');
+      const appElement = document.querySelector('.App');
+      if (appElement && oldScroll.current !== appElement.scrollTop) {
+        updateExpanded(false);
+        oldScroll.current = appElement.scrollTop;
+      }
+    };
+
+    // Event listeners for URL change and scrolling .app element
+    window.addEventListener('popstate', handleUrlChange);
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup functions to remove event listeners
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const perfEntries = performance.getEntriesByType('navigation');
@@ -33,11 +60,10 @@ function NavBar({ toggleLoading, load }) {
       const isPageReloaded = navEntry.type === 'reload';
 
       if (isPageReloaded && (activePage !== '/')) {
-        // setLoader(true);
         setWindowLoaded(true);
       }
     }
-  }, []);
+  }, [activePage]);
 
   const parallaxElement = document.querySelector('.animatio');
   function scrollHandler() {
@@ -109,7 +135,6 @@ function NavBar({ toggleLoading, load }) {
                 as={Link}
                 to="/about"
                 onClick={() => {
-                  // toggleLoading(true)
                   updateExpanded(false);
                 }}
               >
@@ -120,9 +145,8 @@ function NavBar({ toggleLoading, load }) {
             <Nav.Item className={activePage === '/project' && 'activeNav'}>
               <Nav.Link
                 as={Link}
-                to="/project"
+                to="/projects"
                 onClick={() => {
-                  // toggleLoading(true)
                   updateExpanded(false);
                 }}
               >
@@ -138,7 +162,6 @@ function NavBar({ toggleLoading, load }) {
                 as={Link}
                 to="/journey"
                 onClick={() => {
-                  // toggleLoading(true)
                   updateExpanded(false);
                 }}
               >
@@ -154,36 +177,12 @@ function NavBar({ toggleLoading, load }) {
                 as={Link}
                 to="/resume"
                 onClick={() => {
-                  // toggleLoading(true)
                   updateExpanded(false);
                 }}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
-            {/* <Nav.Item className={activePage === '/test' && 'activeNav'}>
-              <Nav.Link
-                as={Link}
-                to="/test"
-                onClick={() => {
-                  // toggleLoading(true)
-                  updateExpanded(false);
-                }}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Test
-              </Nav.Link>
-            </Nav.Item> */}
-
-            {/* <Nav.Item className={activePage === '/' && 'activeNav'}>
-              <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
-            </Nav.Item> */}
-
             <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/vin51435/MyPortfolio1"

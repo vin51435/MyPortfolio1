@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { FaRegHandPointRight } from "react-icons/fa";
 
 function AboutCard() {
   return (
