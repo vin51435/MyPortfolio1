@@ -142,7 +142,7 @@ function NavBar({ toggleLoading, load }) {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className={activePage === '/project' && 'activeNav'}>
+            <Nav.Item className={activePage === '/projects' && 'activeNav'}>
               <Nav.Link
                 as={Link}
                 to="/projects"
