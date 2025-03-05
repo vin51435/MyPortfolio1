@@ -86,7 +86,7 @@ const CareerLadder = ({ toggleLoading }) => {
         >
           <h3 className="vertical-timeline-element-title">Full-Stack Development Intern</h3>
           <h4 className="vertical-timeline-element-subtitle">Rthetapi (Remote)</h4>
-          <p>Developing and maintaining scalable web applications using React, Next.js, NestJS, and PostgreSQL. <br/> Optimizing performance, integrating APIs, and collaborating on UI/UX improvements</p>
+          <p>Developing and maintaining scalable web applications using React, Next.js, NestJS, and PostgreSQL.</p>
         </VerticalTimelineElement>
       </VerticalTimeline>
 
