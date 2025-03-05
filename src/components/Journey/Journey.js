@@ -76,6 +76,18 @@ const CareerLadder = ({ toggleLoading }) => {
           <h4 className="vertical-timeline-element-subtitle">Master's in Computer Science</h4>
           <p>Currently pursuing a Master's in Computer Science</p>
         </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: primaryColor, color: tertiaryColor }}
+          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
+          date="November 2024 - Present"
+          iconStyle={{ background: primaryColor, color: tertiaryColor }}
+          icon={<FaBriefcase />}
+        >
+          <h3 className="vertical-timeline-element-title">Full-Stack Development Intern</h3>
+          <h4 className="vertical-timeline-element-subtitle">Rthetapi (Remote)</h4>
+          <p>Developing and maintaining scalable web applications using React, Next.js, NestJS, and PostgreSQL. <br/> Optimizing performance, integrating APIs, and collaborating on UI/UX improvements</p>
+        </VerticalTimelineElement>
       </VerticalTimeline>
 
     </Container>
