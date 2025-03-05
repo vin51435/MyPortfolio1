@@ -20,7 +20,7 @@ function ResumeNew({ toggleLoading }) {
       <Row className="justify-content-center mt-3">
         <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}        >
           <AiOutlineDownload />
-          &nbsp;Download CV
+          &nbsp;Download Resume
         </Button>
       </Row>
 
@@ -40,7 +40,7 @@ function ResumeNew({ toggleLoading }) {
           style={{ maxWidth: "250px" }}
         >
           <AiOutlineDownload />
-          &nbsp;Download CV
+          &nbsp;Download Resume
         </Button>
       </Row>
     </Container>
