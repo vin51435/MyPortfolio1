@@ -9,7 +9,6 @@ import Footer from "@src/components/Footer";
 import Resume from "@src/components/Resume/ResumeNew";
 import Journey from "@src/components/Journey/Journey";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Navigate
@@ -39,6 +38,14 @@ function App() {
   return (
     <>
       <Preloader load={load} />
+      <div className="ambient-grid">
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+      </div>
+      <div className="ambient-glow-blob" />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar toggleLoading={toggleLoading} load={load} />
         <ScrollToTop />

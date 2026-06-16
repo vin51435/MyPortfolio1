@@ -1,88 +1,84 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import TechStack from "@src/components/About/TechStack";
-import AboutCard from "@src/components/About/AboutCard";
-import laptopImg from "@src/Assets/about.svg";
-import ToolStack from "@src/components/About/ToolStack";
-import { titleAni, subContentAni } from '@src/components/FramerAnimationConfig.js';
+import TechStack from "./TechStack";
+import AboutCard from "./AboutCard";
+import laptopImg from "../../Assets/about.svg";
+import ToolStack from "./ToolStack";
 
-const content = (load) => ({
+const containerVariants = {
   animate: {
-    transition: { staggerChildren: 0.1, delayChildren: load ? 2.8 : 0 },
+    transition: {
+      staggerChildren: 0.1,
+    },
   },
-});
+};
 
-function About({ load, toggleLoading }) {
+const fadeUpVariants = {
+  initial: { y: 20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
+function About({ toggleLoading }) {
   useEffect(() => {
-    toggleLoading(false);
-  }, []);
+    if (toggleLoading) {
+      toggleLoading(false);
+    }
+  }, [toggleLoading]);
 
   return (
     <Container fluid className="about-section">
-      <motion.section
-        exit={{ opacity: 0 }}
+      <motion.div
+        variants={containerVariants}
+        initial="initial"
+        animate="animate"
       >
-        {!load &&
-          <motion.div
-            variants={content(load)}
-            animate="animate"
-            initial="initial"
-          >
-            <Container fluid='lg'>
-              <Row
-                className="about-content-card">
-                <Col
-                  md={7}
-                >
-                  <motion.h1
-                    variants={titleAni}
-                  >
-                    <h1 className="about-section-header" >
-                      Know Who <strong className="yellow">I AM</strong>
-                    </h1>
-                  </motion.h1>
-                  <motion.div
-                    variants={subContentAni}
-                  >
-                    <AboutCard />
-                  </motion.div>
-                </Col>
-                <Col
-                  md={5}
-                  className="about-img"
-                >
-                  <img src={laptopImg} alt="about" className="" />
-                </Col>
-              </Row>
-              <motion.h1
-                variants={titleAni}
-              >
-                <h1 className="about-section-header">
-                  Professional <strong className="yellow">Skillset </strong>
-                </h1>
+        <Container>
+          <Row className="about-content-card align-items-center">
+            <Col md={7}>
+              <motion.h1 variants={fadeUpVariants} className="about-section-header">
+                Know Who <strong className="yellow">I AM</strong>
               </motion.h1>
-              <motion.div
-                variants={subContentAni}
-              >
-                <TechStack />
+              <motion.div variants={fadeUpVariants}>
+                <AboutCard />
               </motion.div>
-              <motion.h1
-                variants={titleAni}
-              >
-                <h1 className="about-section-header">
-                  <strong className="yellow">Tools</strong> I use
-                </h1>
-              </motion.h1>
-              <motion.div
-                variants={subContentAni}
-              >
-                <ToolStack />
-              </motion.div>
-            </Container>
-          </motion.div>}
-      </motion.section>
+            </Col>
+            <Col md={5} className="about-img text-center mt-5 mt-md-0">
+              <motion.img
+                variants={fadeUpVariants}
+                src={laptopImg}
+                alt="about illustration"
+                className="img-fluid"
+              />
+            </Col>
+          </Row>
+
+          <div className="mt-5">
+            <motion.h1 variants={fadeUpVariants} className="about-section-header text-center mb-5">
+              Professional <strong className="yellow">Skillset</strong>
+            </motion.h1>
+            <motion.div variants={fadeUpVariants}>
+              <TechStack />
+            </motion.div>
+          </div>
+
+          <div className="mt-5">
+            <motion.h1 variants={fadeUpVariants} className="about-section-header text-center mb-5">
+              <strong className="yellow">Tools</strong> I Use
+            </motion.h1>
+            <motion.div variants={fadeUpVariants}>
+              <ToolStack />
+            </motion.div>
+          </div>
+        </Container>
+      </motion.div>
     </Container>
   );
 }

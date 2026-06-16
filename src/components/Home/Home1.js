@@ -1,55 +1,131 @@
 import React from 'react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import Type from "@src/components/Home/Type.js";
-import homeImg from '@src/Assets/home1.svg';
-import { titleAni } from '@src/components/FramerAnimationConfig.js';
 
-const content = (load) => ({
+const containerVariants = {
+  initial: {},
   animate: {
-    transition: { staggerChildren: 0.1, delayChildren: load ?? 0.5 },
+    transition: {
+      staggerChildren: 0.15,
+    },
   },
-});
+};
 
-const Home1 = ({ load }) => {
+const fadeUpVariants = {
+  initial: { opacity: 0, y: 30 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const codeCardVariants = {
+  initial: { opacity: 0, scale: 0.95 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
+      delay: 0.3,
+    },
+  },
+};
+
+const scrollIndicatorVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 0.8,
+    transition: {
+      duration: 0.8,
+      delay: 1.2,
+    },
+  },
+};
+
+const Home1 = () => {
+  const handleScrollDown = () => {
+    const nextSection = document.querySelector('.home-introduction');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <motion.section exit={{ opacity: 0 }}>
+    <motion.section
+      variants={containerVariants}
+      initial="initial"
+      animate="animate"
+      style={{ width: "100%", position: "relative" }}
+    >
+      <Row className="align-items-center" style={{ minHeight: "calc(100vh - 180px)" }}>
+        <Col lg={7} className="home-header">
+          <motion.div variants={fadeUpVariants} className="heading">
+            GREETINGS_
+          </motion.div>
+
+          <motion.h1 variants={fadeUpVariants} className="heading-name">
+            <span className="heading-name-first">I AM</span>
+            <strong className="main-name">VINAY POOJARY</strong>
+          </motion.h1>
+
+          <motion.div variants={fadeUpVariants} className="typewriter-wrapper">
+            <span className="developer-tag">Backend Developer &amp; Full-Stack Engineer</span>
+          </motion.div>
+
+          <motion.p variants={fadeUpVariants} className="mt-4 text-secondary" style={{ maxWidth: '480px', fontSize: '1.05rem', lineHeight: '1.7' }}>
+            Designing, building, and scaling high-performance backend systems, database queries, and CI/CD pipelines. Focused on optimizing B2B architectures and automating distributed background workloads.
+          </motion.p>
+        </Col>
+
+        <Col lg={5} className="mt-5 mt-lg-0 home-main-img-container">
+          <motion.div variants={codeCardVariants} className="w-100">
+            <div className="mock-editor-card">
+              <div className="mock-editor-header">
+                <div className="mock-dots">
+                  <span className="mock-dot mock-dot-red"></span>
+                  <span className="mock-dot mock-dot-yellow"></span>
+                  <span className="mock-dot mock-dot-green"></span>
+                </div>
+                <div className="mock-filename">developer.json</div>
+              </div>
+              <div className="mock-editor-code">
+                <pre>
+                  <code>
+{`{
+  "name": "Vinay Poojary",
+  "role": "Backend Developer",
+  "experience": {
+    "backend": ["Spring Boot", "NestJS", "Node.js"],
+    "database": ["PostgreSQL", "MongoDB", "Redis"],
+    "devops": ["Docker", "Jenkins", "AWS"]
+  },
+  "focus": "Performance & Security",
+  "learning": "Distributed Systems"
+}`}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </motion.div>
+        </Col>
+      </Row>
+
+      {/* Scroll Down Mouse Indicator */}
       <motion.div
-        variants={content(load)}
-        animate="animate"
-        initial="initial"
+        variants={scrollIndicatorVariants}
+        className="scroll-indicator d-flex"
+        onClick={handleScrollDown}
       >
-        <Container fluid className="home-section" id="home" style={{ zIndex: 2 }}>
-          <Container className="home-content">
-            <motion.div
-              variants={titleAni}
-            >
-              <Row>
-                <Col md={8} lg={7} className="home-header">
-                  <h1 className="heading">
-                    Hi There!
-                  </h1>
-
-                  <h1 className="heading-name">
-                    <span className="heading-name-first">I Am</span>
-                    <strong className="main-name"> Vinay Poojary</strong>
-                  </h1>
-
-                  <div style={{ padding: 50, textAlign: "left" }}>
-                    <Type />
-                  </div>
-                </Col>
-
-                <Col md={4} lg={5} className='home-main-img-container'>
-                  <img src={homeImg} className="home-img-svg" alt="" />
-                </Col>
-              </Row>
-            </motion.div>
-          </Container>
-        </Container>
+        <span className="scroll-text">Scroll Down</span>
+        <div className="mouse-scroll"></div>
       </motion.div>
     </motion.section>
   );
 };
 
-export default Home1; 
+export default Home1;

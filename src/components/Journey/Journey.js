@@ -1,97 +1,111 @@
 import React, { useEffect } from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { FaBriefcase, FaStar, FaSchool, FaGraduationCap } from 'react-icons/fa';
 import { Container } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import { FaBriefcase, FaSchool, FaGraduationCap } from 'react-icons/fa';
 
-const CareerLadder = ({ toggleLoading }) => {
+const timelineVariants = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const Journey = ({ toggleLoading }) => {
   useEffect(() => {
-    toggleLoading(false);
-  }, []);
+    if (toggleLoading) {
+      toggleLoading(false);
+    }
+  }, [toggleLoading]);
 
-  const primaryColor = '#FFD60A';
-  const secondaryColor = '#FF8B0E';
-  const tertiaryColor = '#4F000B';
+  const timelineData = [
+    {
+      date: "Sep 2025 - Present",
+      title: "Backend Developer",
+      subtitle: "Pipex.Ai (Mumbai, Maharashtra)",
+      desc: "Developing backend services for a B2B industrial marketplace. Contributed to SaaS, admin, and asynchronous worker service repositories. Contributed to CI/CD pipeline development, resolved critical security vulnerabilities, optimized build workflows reducing development build times by 70%, and improved API performance by 4-6x.",
+      icon: <FaBriefcase />,
+    },
+    {
+      date: "2024 - Present",
+      title: "Master of Science, Computer Science",
+      subtitle: "Mumbai University (Mumbai, India)",
+      desc: "Currently pursuing a Master's in Computer Science to study advanced software engineering concepts.",
+      icon: <FaGraduationCap />,
+    },
+    {
+      date: "Nov 2024 - Apr 2025",
+      title: "Full Stack Development Intern",
+      subtitle: "Rthetapi (Remote)",
+      desc: "Developed modular full-stack web applications using React, Node.js, and NestJS, implementing microservices-based APIs with PostgreSQL for scalable backend architecture.",
+      icon: <FaBriefcase />,
+    },
+    {
+      date: "Nov 2023 - Feb 2024",
+      title: "Frontend Development Intern",
+      subtitle: "AltissAdvance Tech Pvt. Ltd. (Mumbai, Maharashtra)",
+      desc: "Developed UI components for a React-based SaaS platform, improving page responsiveness and load performance. Translated design mockups into production-ready code.",
+      icon: <FaBriefcase />,
+    },
+    {
+      date: "2023",
+      title: "Bachelor of Science, Computer Science",
+      subtitle: "SIWS College, Wadala (Mumbai, India)",
+      desc: "Graduated with a Bachelor of Science (BSc) in Computer Science.",
+      icon: <FaGraduationCap />,
+    },
+    {
+      date: "2018 - 2020",
+      title: "Completed Higher Secondary Education",
+      subtitle: "Elphinstone College (Mumbai, India)",
+      desc: "Completed HSC board studies with a focus on science and programming basics.",
+      icon: <FaSchool />,
+    },
+  ];
 
   return (
-    <Container fluid className='journey-section' id='' >
-      <VerticalTimeline lineColor={'#be50f4'}>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: primaryColor, color: tertiaryColor }}
-          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
-          date="2018"
-          iconStyle={{ background: primaryColor, color: tertiaryColor }}
-          icon={<FaSchool />}
-        >
-          <h3 className="vertical-timeline-element-title">Completed School</h3>
-          <h4 className="vertical-timeline-element-subtitle">SSC Board</h4>
-          <p>Graduated from SSC Board</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: primaryColor, color: tertiaryColor }}
-          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
-          date="2018 - 2020"
-          iconStyle={{ background: primaryColor, color: tertiaryColor }}
-          icon={<FaSchool />}
-        >
-          <h3 className="vertical-timeline-element-title">Completed Higher Secondary Education</h3>
-          <h4 className="vertical-timeline-element-subtitle">Elphinstone College</h4>
-          <p>Graduated from HSC Board</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: primaryColor, color: tertiaryColor }}
-          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
-          date="2020 - 2023"
-          iconStyle={{ background: primaryColor, color: tertiaryColor }}
-          icon={<FaGraduationCap />}
-        >
-          <h3 className="vertical-timeline-element-title">Completed Graduation</h3>
-          <h4 className="vertical-timeline-element-subtitle">Mumbai University</h4>
-          <p>Graduated with BSc in Computer Science</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: primaryColor, color: tertiaryColor }}
-          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
-          date="November 2023 - February 2024"
-          iconStyle={{ background: primaryColor, color: tertiaryColor }}
-          icon={<FaBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Frontend Development Intern</h3>
-          <h4 className="vertical-timeline-element-subtitle">XIRCLS</h4>
-          <p>Worked on various frontend projects, enhancing functionality and user experience</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: primaryColor, color: tertiaryColor }}
-          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
-          date="2024 - Present"
-          iconStyle={{ background: primaryColor, color: tertiaryColor }}
-          icon={<FaGraduationCap />}
-        >
-          <h3 className="vertical-timeline-element-title">Pursuing Master's</h3>
-          <h4 className="vertical-timeline-element-subtitle">Master's in Computer Science</h4>
-          <p>Currently pursuing a Master's in Computer Science</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: primaryColor, color: tertiaryColor }}
-          contentArrowStyle={{ borderRight: `7px solid ${primaryColor}` }}
-          date="November 2024 - Present"
-          iconStyle={{ background: primaryColor, color: tertiaryColor }}
-          icon={<FaBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Full-Stack Development Intern</h3>
-          <h4 className="vertical-timeline-element-subtitle">Rthetapi (Remote)</h4>
-          <p>Developing and maintaining scalable web applications using React, Next.js, NestJS, and PostgreSQL.</p>
-        </VerticalTimelineElement>
-      </VerticalTimeline>
+    <Container fluid className="journey-section">
+      <Container className="text-center">
+        <h1 className="project-heading mb-2">
+          My Professional <strong className="yellow">Journey</strong>
+        </h1>
+        <p className="text-secondary mb-5" style={{ fontSize: "1.1rem" }}>
+          A chronological overview of my academic background, developer internships, and professional roles.
+        </p>
 
+        <div className="timeline-container">
+          {timelineData.map((item, index) => (
+            <motion.div
+              key={index}
+              className="timeline-item"
+              variants={timelineVariants}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {/* Custom Dot Indicator */}
+              <div className="timeline-dot d-flex align-items-center justify-content-center"></div>
+
+              {/* Timeline Card */}
+              <div className="timeline-content">
+                <span className="timeline-date">{item.date}</span>
+                <h3 className="timeline-title d-flex align-items-center gap-2">
+                  <span style={{ color: "var(--accent)" }}>{item.icon}</span>
+                  {item.title}
+                </h3>
+                <h4 className="timeline-subtitle">{item.subtitle}</h4>
+                <p className="timeline-desc mb-0">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
     </Container>
   );
 };
 
-export default CareerLadder;
+export default Journey;

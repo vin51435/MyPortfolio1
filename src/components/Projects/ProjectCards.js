@@ -15,29 +15,47 @@ function ProjectCards({ project }) {
       navigate(`/projects?name=${project.name}`);
     }
   };
+
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={project.imgPath} alt="card-img" loading="lazy" style={{ minHeight: '162px' }} />
+      <div style={{ overflow: "hidden", position: "relative" }}>
+        <Card.Img
+          variant="top"
+          src={project.imgPath}
+          alt={project.title}
+          loading="lazy"
+        />
+      </div>
       <Card.Body>
-        <Card.Title>{project.title}</Card.Title>
-        <Card.Text style={{ textAlign: "start" }}>
-          {project.description}
-        </Card.Text>
         <div>
-          <Button className='w-100' variant="primary" href={project.ghLink} target="_blank">
-            <BsGithub color="#4f000b" /> &nbsp;
-            GitHub
-          </Button>
-          {"\n"}
-          {"\n"}
-
-          <Button className='w-100 mt-1' variant="primary" onClick={handleClick}>
-            <CgWebsite color="#4f000b" /> &nbsp;
-            {project.hosted ? "Demo" : 'Details'}
+          <Card.Title>{project.title}</Card.Title>
+          <Card.Text className="text-start">
+            {project.description}
+          </Card.Text>
+        </div>
+        <div className="d-flex gap-2 w-100 mt-3">
+          {project.ghLink ? (
+            <Button
+              className="flex-grow-1"
+              variant="primary"
+              href={project.ghLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsGithub /> &nbsp; GitHub
+            </Button>
+          ) : null}
+          <Button
+            className="flex-grow-1"
+            variant="primary"
+            onClick={handleClick}
+          >
+            <CgWebsite /> &nbsp; {project.hosted ? "Demo" : "Details"}
           </Button>
         </div>
       </Card.Body>
-    </Card >
+    </Card>
   );
 }
+
 export default ProjectCards;

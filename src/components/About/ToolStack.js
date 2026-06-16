@@ -1,28 +1,31 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import {
   SiVisualstudiocode,
   SiPostman,
   SiVercel,
-  SiWindows10,
+  SiGithub,
+  SiGitlab,
+  SiJenkins,
 } from "react-icons/si";
 
 function ToolStack() {
+  const tools = [
+    { icon: <SiVisualstudiocode />, name: "VS Code" },
+    { icon: <SiPostman />, name: "Postman" },
+    { icon: <SiGithub />, name: "GitHub" },
+    { icon: <SiGitlab />, name: "GitLab" },
+    { icon: <SiJenkins />, name: "Jenkins" },
+    { icon: <SiVercel />, name: "Vercel" },
+  ];
+
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiWindows10 />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
-      </Col>
-    </Row>
+    <div className="tech-stack-grid">
+      {tools.map((item, index) => (
+        <div key={index} className="tech-icons" title={item.name}>
+          {item.icon}
+        </div>
+      ))}
+    </div>
   );
 }
 

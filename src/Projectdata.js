@@ -32,9 +32,9 @@ const projects = [
   {
     imgPath:
       "https://res.cloudinary.com/dwutvtryh/image/upload/v1720263249/portfolio%201/ProjectImg/curlyhead.png",
-    title: "E-Commerce App",
+    title: "E-Commerce Platform",
     description:
-      "My eCommerce platform, developed with Angular and Spring Boot, delivers a modern shopping experience with responsive design, secure transactions, streamlined order management, and dynamic product displays. From intuitive navigation to personalized shopping recommendations, it's designed to elevate the online retail experience.",
+      "Developed a responsive e-commerce app with secure authentication and payment integration. Designed and implemented modular APIs and UI components with full CRUD support for users, products, and orders.",
     hosted: false,
     name: "curlyHeads",
     ghLink: "",
@@ -64,8 +64,8 @@ const projects = [
 const projectData = [
   {
     name: "curlyHeads",
-    title: "E-commerce Website",
-    subTitle: "E-commerce website using Angular and Boot Spring",
+    title: "E-Commerce Platform",
+    subTitle: "Developed a responsive e-commerce app with secure authentication and payment integration",
     data: [
       {
         imgSrc:
