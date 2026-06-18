@@ -270,17 +270,46 @@ p {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Customize collapsing transition curve */
+.collapsing {
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 0.8rem 1rem !important;
   }
+  /* Reset container styles to prevent height jank */
   .navbar-collapse {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* Move style and padding to inner nav wrapper */
+  .navbar-collapse .navbar-nav {
     background-color: var(--bg-primary);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
     margin-top: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Smooth entrance animation */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Transitions on collapse states */
+  .navbar-collapse.show .navbar-nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .navbar-collapse.collapsing .navbar-nav {
+    opacity: 0.5;
+    transform: translateY(-5px);
   }
   .navbar-nav .nav-item {
     margin: 0.5rem 0;
@@ -472,8 +501,9 @@ p {
 
 @media (max-width: 768px) {
   .home-section {
-    padding-top: 50px;
-    padding-bottom: 40px;
+    /* padding-top: 50px; */
+    min-height: 80vh;
+    /* padding-bottom: 40px; */
   }
   .heading-name {
     font-size: 2.8rem;
@@ -572,18 +602,41 @@ p {
   color: var(--accent) !important;
 }
 
+.tech-name {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .about-section {
-    padding-top: 110px;
+    padding-top: 65px;
   }
   .about-section-header {
     font-size: 1.8rem;
   }
+  .tech-stack-grid {
+    gap: 0.6rem !important;
+    padding-bottom: 25px !important;
+  }
   .tech-icons {
-    width: 100px !important;
-    height: 100px !important;
-    font-size: 2.2rem !important;
-    margin: 8px !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: 1.2rem !important;
+    margin: 4px !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .tech-icons:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+    box-shadow: 0 4px 12px var(--accent-glow-subtle) !important;
+  }
+  .tech-name {
+    display: inline-block !important;
+    font-size: 0.85rem;
+    font-weight: 500;
   }
 }
 
@@ -715,7 +768,7 @@ p {
 
 @media (max-width: 768px) {
   .project-section {
-    padding-top: 110px;
+    padding-top: 65px;
   }
   .project-heading {
     font-size: 1.8rem;
@@ -821,7 +874,7 @@ p {
 
 @media (max-width: 768px) {
   .journey-section {
-    padding-top: 110px;
+    padding-top: 65px;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -871,7 +924,9 @@ p {
 
 @media (max-width: 768px) {
   .resume-section {
-    padding-top: 110px;
+    padding-top: 0px;
+    height: 0px !important;
+    min-height: 80vh !important;
   }
 }
 

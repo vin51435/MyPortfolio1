@@ -50,7 +50,7 @@ function About({ toggleLoading }) {
                 <AboutCard />
               </motion.div>
             </Col>
-            <Col md={5} className="about-img text-center mt-5 mt-md-0">
+            <Col md={5} className="about-img text-center mt-5 mt-md-0 d-none d-md-block">
               <motion.img
                 variants={fadeUpVariants}
                 src={laptopImg}

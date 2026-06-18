@@ -53,6 +53,7 @@ function TechStack() {
       {techs.map((item, index) => (
         <div key={index} className="tech-icons" title={item.name}>
           {item.icon}
+          <span className="tech-name">{item.name}</span>
         </div>
       ))}
     </div>

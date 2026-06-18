@@ -82,7 +82,7 @@ const Home1 = () => {
           </motion.p>
         </Col>
 
-        <Col lg={5} className="mt-5 mt-lg-0 home-main-img-container">
+        <Col lg={5} className="mt-5 mt-lg-0 home-main-img-container d-none d-lg-block">
           <motion.div variants={codeCardVariants} className="w-100">
             <div className="mock-editor-card">
               <div className="mock-editor-header">
@@ -118,7 +118,7 @@ const Home1 = () => {
       {/* Scroll Down Mouse Indicator */}
       <motion.div
         variants={scrollIndicatorVariants}
-        className="scroll-indicator d-flex"
+        className="scroll-indicator d-none d-lg-flex"
         onClick={handleScrollDown}
       >
         <div className="mouse-scroll"></div>
