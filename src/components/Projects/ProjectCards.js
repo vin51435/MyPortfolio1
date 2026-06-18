@@ -10,7 +10,7 @@ function ProjectCards({ project }) {
 
   const handleClick = () => {
     if (project.hosted) {
-      window.open(project.demoLink, '_blank');
+      window.open(project.demoLink, "_blank");
     } else {
       navigate(`/projects?name=${project.name}`);
     }
@@ -18,7 +18,9 @@ function ProjectCards({ project }) {
 
   return (
     <Card className="project-card-view">
-      <div style={{ overflow: "hidden", position: "relative" }}>
+      <div
+        style={{ overflow: "hidden", position: "relative", padding: "20px" }}
+      >
         <Card.Img
           variant="top"
           src={project.imgPath}
@@ -29,9 +31,7 @@ function ProjectCards({ project }) {
       <Card.Body>
         <div>
           <Card.Title>{project.title}</Card.Title>
-          <Card.Text className="text-start">
-            {project.description}
-          </Card.Text>
+          <Card.Text className="text-start">{project.description}</Card.Text>
         </div>
         <div className="d-flex gap-2 w-100 mt-3">
           {project.ghLink ? (

@@ -121,7 +121,6 @@ const Home1 = () => {
         className="scroll-indicator d-flex"
         onClick={handleScrollDown}
       >
-        <span className="scroll-text">Scroll Down</span>
         <div className="mouse-scroll"></div>
       </motion.div>
     </motion.section>

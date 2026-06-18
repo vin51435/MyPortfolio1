@@ -55,7 +55,7 @@ function ResumeNew({ toggleLoading }) {
 
   const scale = Math.max(
     0.4,
-    Math.min(availableHeight / pdfHeight, availableWidth / pdfWidth)
+    Math.min(availableHeight / pdfHeight, availableWidth / pdfWidth),
   );
 
   return (
@@ -66,8 +66,8 @@ function ResumeNew({ toggleLoading }) {
         height: "100vh",
         background: "var(--bg-primary)",
         overflow: "hidden",
-        paddingTop: "90px",
-        paddingBottom: "20px",
+        // paddingTop: "90px",
+        // paddingBottom: "20px",
       }}
     >
       <motion.div
