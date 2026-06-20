@@ -7,7 +7,29 @@ const projects = [
       "StudentHub is a scalable social learning platform built to foster academic collaboration and community engagement among students. Inspired by Reddit’s community structure, it enables users to join or create academic communities, share posts, comment in threaded discussions, and interact in real time. The platform includes features like post recommendations, study groups, resource sharing, polls, event management, and classifieds for textbooks. It supports real-time chat via WebSockets and notifications through both WebPush and WebSocket. Built with the MERN stack and TypeScript, StudentHub employs AWS Lambda microservices, S3 for media storage, and BullMQ with Redis for background job scheduling. The backend is production-ready with modular architecture, input sanitization, rate limiting, and optimized MongoDB queries for large-scale performance. The system also tracks user activity, computes personalized recommendations, and delivers a responsive front-end experience powered by React, Redux, Tailwind CSS, and Ant Design.",
     hosted: true,
     ghLink: "https://github.com/vin51435/StudentHub",
-    demoLink: "https://studenthub.vercel.app/",
+    demoLink: "https://studenhub-mauve.vercel.app/",
+    isLiveEmbed: true,
+    embedUrl: "https://studenhub-mauve.vercel.app/login",
+    embedContainerStyle: {
+      position: "relative",
+      width: "100%",
+      aspectRatio: "16/9",
+      overflow: "hidden",
+      borderRadius: "8px",
+      border: "1px solid var(--border)",
+      background: "#0c0c0d",
+    },
+    embedIframeStyle: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "142.85%",
+      height: "142.85%",
+      border: "none",
+      transform: "scale(0.7)",
+      transformOrigin: "top left",
+      background: "#0c0c0d",
+    },
   },
   {
     imgPath:
@@ -65,7 +87,16 @@ const projectData = [
   {
     name: "curlyHeads",
     title: "E-Commerce Platform",
-    subTitle: "Developed a responsive e-commerce app with secure authentication and payment integration",
+    subTitle:
+      "Developed a responsive e-commerce app with secure authentication and payment integration",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "Bootstrap",
+    ],
     data: [
       {
         imgSrc:

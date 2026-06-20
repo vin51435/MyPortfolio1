@@ -510,8 +510,8 @@ p {
 @media (max-width: 768px) {
   .home-section {
     min-height: 80vh;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
   .home-about-section {
     padding-left: 24px !important;
@@ -1250,4 +1250,29 @@ p {
     opacity: 1;
     color: var(--accent);
   }
+}
+
+/* Custom Tooltip Styling */
+.tooltip-inner {
+  width: auto !important;
+  max-width: min(450px, 90vw) !important;
+  height: auto !important;
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 10px 15px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+  text-align: left !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+}
+
+.tooltip-arrow::before {
+  border-top-color: var(--border) !important;
+  border-bottom-color: var(--border) !important;
 }

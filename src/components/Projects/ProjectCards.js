@@ -1,6 +1,5 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Card, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
@@ -16,22 +15,56 @@ function ProjectCards({ project }) {
     }
   };
 
+  const renderTooltip = (props) => (
+    <Tooltip 
+      id={`tooltip-${project.title.replace(/\s+/g, '-').toLowerCase()}`} 
+      {...props} 
+      style={{ ...props.style, zIndex: 9999 }}
+    >
+      {project.description}
+    </Tooltip>
+  );
+
   return (
     <Card className="project-card-view">
       <div
         style={{ overflow: "hidden", position: "relative", padding: "20px" }}
       >
-        <Card.Img
-          variant="top"
-          src={project.imgPath}
-          alt={project.title}
-          loading="lazy"
-        />
+        {project.isLiveEmbed ? (
+          <div 
+            onClick={handleClick} 
+            style={{ cursor: "pointer" }}
+            title={`View live demo of ${project.title}`}
+          >
+            <div style={project.embedContainerStyle}>
+              <iframe
+                src={project.embedUrl}
+                title={project.title}
+                style={{ ...project.embedIframeStyle, pointerEvents: "none" }}
+              />
+            </div>
+          </div>
+        ) : (
+          <Card.Img
+            variant="top"
+            src={project.imgPath}
+            alt={project.title}
+            loading="lazy"
+          />
+        )}
       </div>
       <Card.Body>
         <div>
           <Card.Title>{project.title}</Card.Title>
-          <Card.Text className="text-start">{project.description}</Card.Text>
+          <OverlayTrigger
+            placement="top"
+            delay={{ show: 150, hide: 150 }}
+            overlay={renderTooltip}
+          >
+            <Card.Text className="text-start" style={{ cursor: "help" }}>
+              {project.description}
+            </Card.Text>
+          </OverlayTrigger>
         </div>
         <div className="d-flex gap-2 w-100 mt-3">
           {project.ghLink ? (
