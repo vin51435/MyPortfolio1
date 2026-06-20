@@ -43,6 +43,7 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,
@@ -127,6 +128,13 @@ p {
   z-index: 0;
   opacity: 0.65;
   animation: rotateGlow 15s infinite ease-in-out;
+  will-change: transform, border-radius;
+}
+
+@media (max-width: 768px) {
+  .ambient-glow-blob {
+    display: none !important;
+  }
 }
 
 @keyframes rotateGlow {
@@ -171,9 +179,9 @@ p {
 }
 
 #scroll {
-  overflow-y: auto;
   position: relative;
   z-index: 2;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ==========================================================================
@@ -501,9 +509,13 @@ p {
 
 @media (max-width: 768px) {
   .home-section {
-    /* padding-top: 50px; */
     min-height: 80vh;
-    /* padding-bottom: 40px; */
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .home-about-section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
   .heading-name {
     font-size: 2.8rem;
