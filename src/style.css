@@ -764,18 +764,110 @@ p {
 
 /* Details Page (ProjectShow) */
 .project-show-container {
-  padding-top: 140px;
+  padding-top: 100px;
   padding-bottom: 80px;
 }
 
-.project-card img {
-  /* border-radius: 12px; */
-  /* border: 1px solid var(--border); */
+@media (max-width: 768px) {
+  .project-show-container {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sticky-details {
+    position: sticky;
+    top: 95px;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+    padding-right: 20px;
+  }
+  /* Hide scrollbars inside sticky details panel */
+  .sticky-details {
+    scrollbar-width: none;
+  }
+  .sticky-details::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tech-badge {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.tech-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: rgba(212, 175, 55, 0.05);
+}
+
+/* Browser Mockup styling */
+.browser-mockup {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
   transition: var(--transition-smooth);
 }
 
-.project-card img:hover {
-  border-color: var(--accent);
+.browser-mockup:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.06);
+}
+
+.browser-header {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.browser-dot-red {
+  background-color: #ff5f56;
+}
+.browser-dot-yellow {
+  background-color: #ffbd2e;
+}
+.browser-dot-green {
+  background-color: #27c93f;
+}
+
+.browser-address-bar {
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  max-width: 220px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
