@@ -41,6 +41,9 @@ function ProjectCards({ project }) {
                 src={project.embedUrl}
                 title={project.title}
                 style={{ ...project.embedIframeStyle, pointerEvents: "none" }}
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
