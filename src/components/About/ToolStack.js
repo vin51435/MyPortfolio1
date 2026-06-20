@@ -1,4 +1,3 @@
-import React from "react";
 import {
   SiVisualstudiocode,
   SiPostman,
@@ -7,11 +6,13 @@ import {
   SiGitlab,
   SiJenkins,
 } from "react-icons/si";
+import { ReactComponent as SiBruno } from "../../Assets/bruno.svg";
 
 function ToolStack() {
   const tools = [
     { icon: <SiVisualstudiocode />, name: "VS Code" },
     { icon: <SiPostman />, name: "Postman" },
+    { icon: <SiBruno />, name: "Bruno" },
     { icon: <SiGithub />, name: "GitHub" },
     { icon: <SiGitlab />, name: "GitLab" },
     { icon: <SiJenkins />, name: "Jenkins" },
