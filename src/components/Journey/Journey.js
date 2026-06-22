@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaSchool, FaGraduationCap } from 'react-icons/fa';
 
+import useSEO from '../Hooks/useSEO';
+
 const timelineVariants = {
   initial: { opacity: 0, y: 40 },
   whileInView: {
@@ -21,6 +23,12 @@ const Journey = ({ toggleLoading }) => {
       toggleLoading(false);
     }
   }, [toggleLoading]);
+
+  useSEO({
+    title: "Vinay Poojary's Career Timeline | Developer Journey",
+    description: "View the career journey, work timeline, education background, and developer internships of Vinay Poojary, including his current role as a Backend Developer.",
+    keywords: "Career Timeline, Experience, alt alt internships, Pipex.Ai, AltissAdvance, Education, Mumbai University"
+  });
 
   const timelineData = [
     {
@@ -68,7 +76,7 @@ const Journey = ({ toggleLoading }) => {
   ];
 
   return (
-    <Container fluid className="journey-section">
+    <Container fluid as="main" className="journey-section">
       <Container className="text-center">
         <h1 className="project-heading mb-2">
           My Professional <strong className="yellow">Journey</strong>

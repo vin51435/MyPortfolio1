@@ -1279,3 +1279,15 @@ p {
   border-top-color: var(--border) !important;
   border-bottom-color: var(--border) !important;
 }
+
+.sub-heading-role {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.75rem;
+  margin-top: 1.5rem;
+  letter-spacing: normal;
+  display: block;
+}

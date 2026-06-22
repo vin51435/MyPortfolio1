@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import pdf from "../../Assets/VINAY_POOJARY_RESUME.pdf";
 
+import useSEO from "../Hooks/useSEO";
+
 // Set up pdfjs worker
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
 
@@ -32,6 +34,12 @@ function ResumeNew({ toggleLoading }) {
       toggleLoading(false);
     }
   }, [toggleLoading]);
+
+  useSEO({
+    title: "Vinay Poojary's Resume | Backend & Full-Stack Developer",
+    description: "View and download Vinay Poojary's developer resume. Highlighting experience in Java, Spring Boot, NestJS, microservices, databases, and CI/CD pipelines.",
+    keywords: "Vinay Poojary Resume, CV, Download Resume, Software Engineer, Backend Engineer CV"
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -61,6 +69,7 @@ function ResumeNew({ toggleLoading }) {
   return (
     <Container
       fluid
+      as="main"
       className="resume-section d-flex flex-column align-items-center justify-content-center"
       style={{
         height: "100vh",

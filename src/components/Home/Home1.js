@@ -71,11 +71,10 @@ const Home1 = () => {
           <motion.h1 variants={fadeUpVariants} className="heading-name">
             <span className="heading-name-first">I AM</span>
             <strong className="main-name">VINAY POOJARY</strong>
+            <span className="sub-heading-role d-block mt-3">
+              Backend Developer &amp; Full-Stack Engineer
+            </span>
           </motion.h1>
-
-          <motion.div variants={fadeUpVariants} className="typewriter-wrapper">
-            <span className="developer-tag">Backend Developer &amp; Full-Stack Engineer</span>
-          </motion.div>
 
           <motion.p variants={fadeUpVariants} className="mt-4 text-secondary" style={{ maxWidth: '480px', fontSize: '1.05rem', lineHeight: '1.7' }}>
             Designing, building, and scaling high-performance backend systems, database queries, and CI/CD pipelines. Focused on optimizing B2B architectures and automating distributed background workloads.

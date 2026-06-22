@@ -6,6 +6,8 @@ import ProjectCard from "./ProjectCards.js";
 import ProjectShow from "./ProjectShow.js";
 import { projects } from "../../Projectdata";
 
+import useSEO from "../Hooks/useSEO";
+
 const containerVariants = {
   animate: {
     transition: {
@@ -36,12 +38,18 @@ function Projects({ toggleLoading }) {
     }
   }, [toggleLoading]);
 
+  useSEO({
+    title: "Projects by Vinay Poojary | Software Portfolio",
+    description: "Browse software engineering projects built by Vinay Poojary, featuring StudentHub, Moview, Food Alls local stall reviews, and interactive dashboard templates.",
+    keywords: "Projects, Software Portfolio, StudentHub, Moview, Food Alls, React, NodeJS"
+  });
+
   if (project) {
     return <ProjectShow name={project} toggleLoading={toggleLoading} />;
   }
 
   return (
-    <Container fluid className="project-section">
+    <Container fluid as="main" className="project-section">
       <motion.div
         variants={containerVariants}
         initial="initial"

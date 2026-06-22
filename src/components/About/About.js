@@ -6,6 +6,8 @@ import AboutCard from "./AboutCard";
 import laptopImg from "../../Assets/about.svg";
 import ToolStack from "./ToolStack";
 
+import useSEO from "../Hooks/useSEO";
+
 const containerVariants = {
   animate: {
     transition: {
@@ -33,8 +35,14 @@ function About({ toggleLoading }) {
     }
   }, [toggleLoading]);
 
+  useSEO({
+    title: "About Vinay Poojary | Backend & Full-Stack Engineer",
+    description: "Learn about Vinay Poojary's software engineering background, BSc/MSc Computer Science studies, work experience at Pipex.Ai, and proficiency in Java, NestJS, SQL, and DevOps tools.",
+    keywords: "About Vinay Poojary, Backend Developer, Skills, Tech Stack, SIWS College, AltissAdvance, Pipex.Ai"
+  });
+
   return (
-    <Container fluid className="about-section">
+    <Container fluid as="main" className="about-section">
       <motion.div
         variants={containerVariants}
         initial="initial"
@@ -60,23 +68,23 @@ function About({ toggleLoading }) {
             </Col>
           </Row>
 
-          <div className="mt-5">
-            <motion.h1 variants={fadeUpVariants} className="about-section-header text-center mb-5">
+          <Container as="section" className="mt-5 p-0">
+            <motion.h2 variants={fadeUpVariants} className="about-section-header text-center mb-5" style={{ fontSize: "2rem" }}>
               Professional <strong className="yellow">Skillset</strong>
-            </motion.h1>
+            </motion.h2>
             <motion.div variants={fadeUpVariants}>
               <TechStack />
             </motion.div>
-          </div>
+          </Container>
 
-          <div className="mt-5">
-            <motion.h1 variants={fadeUpVariants} className="about-section-header text-center mb-5">
+          <Container as="section" className="mt-5 p-0">
+            <motion.h2 variants={fadeUpVariants} className="about-section-header text-center mb-5" style={{ fontSize: "2rem" }}>
               <strong className="yellow">Tools</strong> I Use
-            </motion.h1>
+            </motion.h2>
             <motion.div variants={fadeUpVariants}>
               <ToolStack />
             </motion.div>
-          </div>
+          </Container>
         </Container>
       </motion.div>
     </Container>

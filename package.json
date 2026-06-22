@@ -29,6 +29,7 @@
   "scripts": {
     "dev": "craco start --host 0.0.0.0",
     "start": "craco start --host 0.0.0.0",
+    "debug": "craco start --inspect-brk=0.0.0.0:9229 --host 0.0.0.0",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"

@@ -7,6 +7,7 @@ import { BsGithub } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
 import useViewportAndFooterHeight from "../Hooks/useViewportAndFooterHeight";
 import projectData, { projects } from "../../Projectdata.js";
+import useSEO from "../Hooks/useSEO";
 
 const fadeUpVariants = {
   initial: { opacity: 0, y: 30 },
@@ -27,6 +28,12 @@ const ProjectShow = ({ name }) => {
 
   const project = projectData.find((ele) => ele.name === name);
   const projectFront = projects.find((ele) => ele.name === name);
+
+  useSEO({
+    title: project ? `${project.title} Case Study | Vinay Poojary` : "Project Details | Vinay Poojary",
+    description: project && projectFront ? `${project.title}: ${projectFront.description.substring(0, 140)}...` : "Detailed case study of software engineering projects by Vinay Poojary.",
+    keywords: project ? `${project.title}, ${(project.technologies || []).join(", ")}, Case Study, Backend Developer` : "Project Case Study, Software Engineering"
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,6 +56,7 @@ const ProjectShow = ({ name }) => {
   return (
     <Container
       fluid
+      as="main"
       className="project-show-container"
       style={{
         minHeight: `${viewportHeight - footerHeight}px`,

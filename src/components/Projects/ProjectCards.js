@@ -58,7 +58,7 @@ function ProjectCards({ project }) {
       </div>
       <Card.Body>
         <div>
-          <Card.Title>{project.title}</Card.Title>
+          <Card.Title as="h3">{project.title}</Card.Title>
           <OverlayTrigger
             placement="top"
             delay={{ show: 150, hide: 150 }}
