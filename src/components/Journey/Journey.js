@@ -35,28 +35,39 @@ const Journey = ({ toggleLoading }) => {
       date: "Sep 2025 - Present",
       title: "Backend Developer",
       subtitle: "Pipex.Ai (Mumbai, Maharashtra)",
-      desc: "Developing backend services for a B2B industrial marketplace. Contributed to SaaS, admin, and asynchronous worker service repositories. Contributed to CI/CD pipeline development, resolved critical security vulnerabilities, optimized build workflows reducing development build times by 70%, and improved API performance by 4-6x.",
+      desc: [
+        "Engineered scalable backend services for a B2B industrial marketplace, streamlining procurement workflows, RFQs, and supplier discovery engines using Agile development practices.",
+        "Architected and maintained modular backend repositories across SaaS platforms, administrator dashboards, and asynchronous worker services built on a microservices architecture.",
+        "Optimized CI/CD pipelines and resolved critical security vulnerabilities, accelerating development build workflows and reducing build times by 70%.",
+        "Boosted REST API performance by 4-6x by implementing advanced SQL query optimization, strategic Redis caching layers, and high-efficiency service design."
+      ],
       icon: <FaBriefcase />,
     },
     {
-      date: "2024 - Present",
+      date: "Expected 2026",
       title: "Master of Science, Computer Science",
       subtitle: "Mumbai University (Mumbai, India)",
-      desc: "Currently pursuing a Master's in Computer Science to study advanced software engineering concepts.",
+      desc: "Currently pursuing a Master's in Computer Science to study advanced software engineering concepts, distributed systems, and backend performance.",
       icon: <FaGraduationCap />,
     },
     {
       date: "Nov 2024 - Apr 2025",
       title: "Full Stack Development Intern",
       subtitle: "Rthetapi (Remote)",
-      desc: "Developed modular full-stack web applications using React, Node.js, and NestJS, implementing microservices-based APIs with PostgreSQL for scalable backend architecture.",
+      desc: [
+        "Developed modular, full-stack web applications using React, Node.js, and NestJS, leveraging microservices-based REST APIs and PostgreSQL for scalable backend architectures.",
+        "Designed robust REST APIs and reusable UI components, collaborating with cross-functional Agile teams to enhance system maintainability and UX."
+      ],
       icon: <FaBriefcase />,
     },
     {
       date: "Nov 2023 - Feb 2024",
       title: "Frontend Development Intern",
       subtitle: "AltissAdvance Tech Pvt. Ltd. (Mumbai, Maharashtra)",
-      desc: "Developed UI components for a React-based SaaS platform, improving page responsiveness and load performance. Translated design mockups into production-ready code.",
+      desc: [
+        "Built high-performance UI components with React and TypeScript for a SaaS platform, improving page responsiveness and client-side load speeds.",
+        "Translated design mockups into production-ready code while ensuring consistent UI/UX and component reusability."
+      ],
       icon: <FaBriefcase />,
     },
     {
@@ -99,14 +110,24 @@ const Journey = ({ toggleLoading }) => {
               <div className="timeline-dot d-flex align-items-center justify-content-center"></div>
 
               {/* Timeline Card */}
-              <div className="timeline-content">
+              <div className="timeline-content text-start">
                 <span className="timeline-date">{item.date}</span>
                 <h3 className="timeline-title d-flex align-items-center gap-2">
                   <span style={{ color: "var(--accent)" }}>{item.icon}</span>
                   {item.title}
                 </h3>
                 <h4 className="timeline-subtitle">{item.subtitle}</h4>
-                <p className="timeline-desc mb-0">{item.desc}</p>
+                {Array.isArray(item.desc) ? (
+                  <ul className="timeline-desc-list mb-0 ps-3 mt-2">
+                    {item.desc.map((bullet, idx) => (
+                      <li key={idx} className="timeline-desc-bullet">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="timeline-desc mb-0">{item.desc}</p>
+                )}
               </div>
             </motion.div>
           ))}

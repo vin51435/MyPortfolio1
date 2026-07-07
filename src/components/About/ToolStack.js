@@ -2,9 +2,6 @@ import {
   SiVisualstudiocode,
   SiPostman,
   SiVercel,
-  SiGithub,
-  SiGitlab,
-  SiJenkins,
 } from "react-icons/si";
 import { ReactComponent as SiBruno } from "../../Assets/bruno.svg";
 
@@ -13,9 +10,6 @@ function ToolStack() {
     { icon: <SiVisualstudiocode />, name: "VS Code" },
     { icon: <SiPostman />, name: "Postman" },
     { icon: <SiBruno />, name: "Bruno" },
-    { icon: <SiGithub />, name: "GitHub" },
-    { icon: <SiGitlab />, name: "GitLab" },
-    { icon: <SiJenkins />, name: "Jenkins" },
     { icon: <SiVercel />, name: "Vercel" },
   ];
 

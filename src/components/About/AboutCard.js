@@ -16,7 +16,7 @@ function AboutCard() {
             <span className="yellow">
               Master of Science in Computer Science
             </span>{" "}
-            (2024 - Present) at Mumbai University. Previously, I graduated from{" "}
+            (Expected 2026) at Mumbai University. Previously, I graduated from{" "}
             <span className="yellow">SIWS College, Wadala</span> with a Bachelor
             of Science in Computer Science in 2023.
           </p>
