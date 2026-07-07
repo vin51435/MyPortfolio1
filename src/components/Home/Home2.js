@@ -16,36 +16,32 @@ function Home2() {
             </h2>
             <div className="home-about-body mt-4">
               <p className="mb-4">
-                Programming has been my{" "}
+                I'm a software engineer focused on building robust, high-performance{" "}
                 <i className="yellow">
-                  <b>creative outlet</b>
-                </i>
-                , a space where lines of code transform concepts into
-                functional, scalable realities.
-              </p>
-              <p className="mb-4">
-                I focus primarily on building dynamic, high-performance web
-                applications with modern languages like
-                <i className="yellow">
-                  <b> JavaScript, React, and Node.js</b>
-                </i>
-                .
-              </p>
-              <p className="mb-4">
-                My fields of interest are crafting{" "}
-                <i className="yellow">
-                  <b>engaging, fluid interfaces</b>
+                  <b>backend systems</b>
                 </i>{" "}
-                and designing robust backend architectures with{" "}
+                and distributed architectures.
+              </p>
+              <p className="mb-4">
+                My primary toolkit includes{" "}
                 <i className="yellow">
-                  <b>MongoDB, SQL, and Express</b>
+                  <b>Java, Spring Boot, NestJS, Node.js, and PostgreSQL</b>
+                </i>
+                , though I believe in choosing the right tool for the problem.
+              </p>
+              <p className="mb-4">
+                I'm particularly interested in designing{" "}
+                <i className="yellow">
+                  <b>scalable microservices</b>
+                </i>
+                , optimizing database queries, and orchestrating background workloads with tools like{" "}
+                <i className="yellow">
+                  <b>Redis and BullMQ</b>
                 </i>
                 .
               </p>
               <p>
-                Whenever possible, I apply my passion for engineering
-                production-ready applications with microservices, clean API
-                architectures, and optimized data layers.
+                From designing clean REST APIs to streamlining CI/CD pipelines, I build applications with a focus on execution speed, security, and long-term maintainability.
               </p>
             </div>
           </Col>
