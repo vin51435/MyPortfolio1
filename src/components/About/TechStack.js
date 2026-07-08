@@ -31,11 +31,16 @@ import {
 import {
   FaDatabase,
   FaExchangeAlt,
-  FaProjectDiagram,
   FaServer,
   FaCodeBranch,
   FaSyncAlt,
 } from "react-icons/fa";
+
+// Custom icons inside Assets folder
+import { ReactComponent as SpringJpaIcon } from "../../Assets/spring-jpa.svg";
+import { ReactComponent as BullmqIcon } from "../../Assets/bullmq.svg";
+import { ReactComponent as MessageQueueIcon } from "../../Assets/message-queue.svg";
+import { ReactComponent as MicroservicesIcon } from "../../Assets/microservices.svg";
 
 function TechStack() {
   const categories = [
@@ -45,7 +50,7 @@ function TechStack() {
         { icon: <DiJava />, name: "Java" },
         { icon: <SiSpringboot />, name: "Spring Boot" },
         { icon: <SiSpring />, name: "Spring MVC" },
-        { icon: <SiSpring />, name: "Spring Data JPA" },
+        { icon: <SpringJpaIcon />, name: "Spring Data JPA" },
         { icon: <DiNodejs />, name: "Node.js" },
         { icon: <SiExpress />, name: "Express.js" },
         { icon: <SiNestjs />, name: "NestJS" },
@@ -61,10 +66,10 @@ function TechStack() {
         { icon: <DiMongodb />, name: "MongoDB" },
         { icon: <SiRedis />, name: "Redis" },
         { icon: <SiRabbitmq />, name: "RabbitMQ" },
-        { icon: <FaProjectDiagram />, name: "BullMQ" },
+        { icon: <BullmqIcon />, name: "BullMQ" },
         { icon: <FaDatabase />, name: "SQL" },
         { icon: <FaServer />, name: "Caching" },
-        { icon: <FaProjectDiagram />, name: "Message Queues" },
+        { icon: <MessageQueueIcon />, name: "Message Queues" },
       ],
     },
     {
@@ -73,7 +78,7 @@ function TechStack() {
         { icon: <SiAmazonaws />, name: "AWS" },
         { icon: <SiDocker />, name: "Docker" },
         { icon: <SiNginx />, name: "Nginx" },
-        { icon: <FaProjectDiagram />, name: "Microservices" },
+        { icon: <MicroservicesIcon />, name: "Microservices" },
         { icon: <FaCodeBranch />, name: "CI/CD Pipelines" },
       ],
     },
