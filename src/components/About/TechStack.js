@@ -109,7 +109,7 @@ function TechStack() {
           </h3>
           <div className="tech-stack-grid">
             {category.skills.map((item, index) => (
-              <div key={index} className="tech-icons" title={item.name}>
+              <div key={index} className="tech-icons">
                 {item.icon}
                 <span className="tech-name">{item.name}</span>
               </div>

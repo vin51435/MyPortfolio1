@@ -16,7 +16,7 @@ function ToolStack() {
   return (
     <div className="tech-stack-grid">
       {tools.map((item, index) => (
-        <div key={index} className="tech-icons" title={item.name}>
+        <div key={index} className="tech-icons">
           {item.icon}
           <span className="tech-name">{item.name}</span>
         </div>
