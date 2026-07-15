@@ -48,6 +48,20 @@ const scrollIndicatorVariants = {
 };
 
 const Home1 = () => {
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleScrollDown = () => {
     const nextSection = document.querySelector('.home-introduction');
     if (nextSection) {
@@ -117,8 +131,10 @@ const Home1 = () => {
       {/* Scroll Down Mouse Indicator */}
       <motion.div
         variants={scrollIndicatorVariants}
+        animate={scrolled ? { opacity: 0, y: 20, transition: { duration: 0.3 } } : "animate"}
         className="scroll-indicator d-none d-lg-flex"
         onClick={handleScrollDown}
+        style={{ pointerEvents: scrolled ? "none" : "auto" }}
       >
         <div className="mouse-scroll"></div>
       </motion.div>

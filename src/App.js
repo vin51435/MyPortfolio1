@@ -18,6 +18,7 @@ import "@src/style.css";
 import "@src/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProjectShow from "@src/components/Projects/ProjectShow.js";
+import PageNavigator from "@src/components/PageNavigator";
 
 function App() {
   const [load, setLoad] = useState(true);
@@ -58,6 +59,7 @@ function App() {
           <Route path="/project" element={<ProjectShow toggleLoading={toggleLoading} />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <PageNavigator toggleLoading={toggleLoading} />
       </div>
       <Footer />
     </>
